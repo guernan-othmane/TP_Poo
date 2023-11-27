@@ -1,9 +1,9 @@
 class Book{
     constructor(title,author,isbn,statut){
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.statut = statut;
+        this._title = title;
+        this._author = author;
+        this._isbn = isbn;
+        this._statut = statut;
     }
     //Getter Syntaxe
     get title(){
@@ -46,51 +46,51 @@ class Book{
 let book = new Book("Algorithme","Enshtein","Scientifiques");
 book.title = "Algorithme";
 console.log(book.title);
-book.afficheDetails
 
 
-// class Person{
-//     constructor(name,dateofbirth){
-//         this.name = name;
-//         this.dateofbirth = dateofbirth;
-//     }
 
-//     get name(){
-//         return this.name;
-//     }
+class Person{
+    constructor(name,dateofbirth){
+        this.name = name;
+        this.dateofbirth = dateofbirth;
+    }
 
-//     set name($name){
-//         this._title = $name;
-//     }
+    get name(){
+        return this.name;
+    }
 
-//     get dateofbirth(){
-//         return this.dateofbirth;
-//     }
+    set name($name){
+        this._title = $name;
+    }
 
-//     set dateofbirth($dateofbirth){
-//         this._title = $dateofbirth;
-//     }
-// }
+    get dateofbirth(){
+        return this.dateofbirth;
+    }
 
-// class Author extends Person{
-//     constructor(name,dateofbirth){
-//         super(name,dateofbirth);
-//         this._listofbooks = []
-//     }
+    set dateofbirth($dateofbirth){
+        this._title = $dateofbirth;
+    }
+}
+
+class Author extends Person{
+    constructor(name,dateofbirth){
+        super(name,dateofbirth);
+        this._listofbooks = []
+    }
     
-//     get listBooks(){
-//         return this.listBooks;
-//     }
+    get listBooks(){
+        return this.listBooks;
+    }
 
-//     set listBooks($listBooks){
-//         this._title = $listBooks;
-//     }
+    set listBooks($listBooks){
+        this._title = $listBooks;
+    }
 
-//     AddBook(listofbooks){
-//         this._listofbooks.push(listofbooks);
-//     }
+    AddBook(listofbooks){
+        this._listofbooks.push(listofbooks);
+    }
 
-// }
+}
 
 
 
@@ -189,6 +189,7 @@ class Member extends User {
 }
 
 
+
 // Example usage
 const user1 = new User(1, "John Doe");
 const member1 = new Member(2, "Alice Smith");
@@ -225,4 +226,8 @@ const book1 = new Book("Algorithme", "Enshtein", "Scientifiques");
 librarian1.addBook(book1);
 console.log(librarian1.checkBookStatus(book1));
 
+class Library{
+      constructor(){
 
+      } 
+}
