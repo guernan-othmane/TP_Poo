@@ -166,6 +166,7 @@ class User {
     }
 }
 
+
 class Member extends User {
     constructor(id, name) {
         super(id, name);
@@ -181,7 +182,7 @@ class Member extends User {
         const index = this._borrowedBooks.indexOf(book);
         if (index !== -1) {
             this._borrowedBooks.splice(index, 1);
-            console.log(`${this.name} has returned ${book.title}.`);
+            console.log(`${this._name} has returned ${book.title}.`);
         } else {
             console.log(`${this.name} does not have ${book.title} borrowed.`);
         }
@@ -197,7 +198,7 @@ const member1 = new Member(2, "Alice Smith");
 user1.id = 1;
 user1.name = "Othmane";
 
-console.log(user1.id);
+console.log(user1.idd);
 console.log(user1.name);
 
 member1.borrowBook(book);

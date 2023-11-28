@@ -1,3 +1,10 @@
+const readline = require('readline');
+
+const space = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+});
 class Spaceship{
     constructor(name,speed,healthStatut){
         this._name = name;
@@ -49,14 +56,18 @@ class Spaceship{
         }
     }
 }
-const spaceship = new Spaceship("Starship 1",30, "Healthy");
+// Demander à l'utilisateur d'entrer les valeurs
+space.question('Enter the name for spaceship: ', (spaceshipName) => {
+    space.question('Enter Speed for spaceship: ', (spaceshipSpeed) => {
+        space.question('Enter HealthStatut for spaceship: ', (spaceshiphealthStatut) => {
+            const spaceship1 = new Spaceship(spaceshipName,spaceshipSpeed,spaceshiphealthStatut);
+            
+            spaceship1.fly();
+            spaceship1.land();
 
-console.log(spaceship.name); 
-console.log(spaceship.speed); 
-console.log(spaceship.healthStatut); 
-
-spaceship.fly(300); 
-spaceship.fly(0); 
-
-spaceship.land(300); 
-spaceship.land(0);
+            // Fermer l'interface readline
+            space.close();
+        });
+    });
+});
+module.exports = Spaceship;

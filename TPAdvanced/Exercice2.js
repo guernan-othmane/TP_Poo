@@ -65,9 +65,8 @@ class Astronaut extends Character {
 inp.question('Enter the name for Alien: ', (alienName) => {
     inp.question('Enter health for Alien: ', (alienHealth) => {
         inp.question('Enter strength for Alien: ', (alienStrength) => {
-            const alien1 = new Alien(alienName, parseInt(alienHealth), parseInt(alienStrength));
+            const alien1 = new Alien(alienName,alienHealth,alienStrength);
             
-            // Appeler les méthodes après avoir créé l'instance
             alien1.speak();
             alien1.move();
 
@@ -80,9 +79,8 @@ inp.question('Enter the name for Alien: ', (alienName) => {
 inp.question('Enter the name for Astronaut: ', (astronautName) => {
     inp.question('Enter health for Astronaut: ', (astronautHealth) => {
         inp.question('Enter strength for Astronaut: ', (astronautStrength) => {
-            const astronaut1 = new Astronaut(astronautName, parseInt(astronautHealth), parseInt(astronautStrength));
+            const astronaut1 = new Astronaut(astronautName,astronautHealth,astronautStrength);
             
-            // Appeler les méthodes après avoir créé l'instance
             astronaut1.speak();
             astronaut1.move();
 
